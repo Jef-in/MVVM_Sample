@@ -41,7 +41,12 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
   
  let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
  cell.titleLabel.text = ArticlesArray[indexPath.row].title
-cell.selectionStyle = .none
+ if(ArticlesArray[indexPath.row].urlToImage != "") {
+        
+ cell.NewsImage.loadImage(UrlString: ArticlesArray[indexPath.row].urlToImage)
+    
+ }
+ cell.selectionStyle = .none
 return cell
     
 }

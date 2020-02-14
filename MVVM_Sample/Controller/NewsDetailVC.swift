@@ -17,6 +17,8 @@ var SelectNewsItem:Int!
     
 @IBOutlet weak var NewsTextView: UITextView!
     
+@IBOutlet weak var NewsImage: CachedImageView!
+    
 override func viewDidLoad() {
     
  InitialSetup()
@@ -27,7 +29,12 @@ func InitialSetup() {
 
  self.TitleLabel.text = articleList[SelectNewsItem].title
  self.NewsTextView.text = articleList[SelectNewsItem].description
-        
+ 
+ if(self.articleList[SelectNewsItem].urlToImage != ""){
+    
+ self.NewsImage.loadImage(UrlString: articleList[SelectNewsItem].urlToImage)
+  
+}
 }
     
 }

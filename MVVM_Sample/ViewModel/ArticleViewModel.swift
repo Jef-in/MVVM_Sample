@@ -30,4 +30,8 @@ struct ArticleViewModel {
         
         return article.description
     }
+    var urlToImage:String {
+        
+        return article.urlToImage
+    }
 }
